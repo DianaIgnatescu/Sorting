@@ -13,29 +13,43 @@ def selection_sort(arr):
         temp = arr[smallest_index]
         arr[smallest_index] = arr[current_index]
         arr[current_index] = temp
+
+        # Or
+        #
+        # arr[current_index], arr[smallest_index] = arr[smallest_index], arr[current_index]
     return arr
 
 
-# print(selection_sort([2, 9, 3]))
+print(selection_sort([2, 9, 3]))
 
 
 # TO-DO:  Implement the Bubble Sort function below
 def bubble_sort(arr):
 
-    swapped = True
+    # Option 1:
 
-    while swapped:
-        swapped = False
-        for i in range(0, len(arr) - 1):
-            if arr[i] > arr[i + 1]:
+    # swapped = True
+
+    # while swapped:
+    #     swapped = False
+    #     for i in range(0, len(arr) - 1):
+    #         if arr[i] > arr[i + 1]:
+    #             # swap
+    #             arr[i], arr[i + 1] = arr[i + 1], arr[i]
+    #             swapped = True
+
+    # Option 2:
+
+    for i in range(0, len(arr) - 1):
+        for j in range(0, len(arr) - 1):
+            if arr[j] > arr[j + 1]:
                 # swap
-                arr[i], arr[i + 1] = arr[i + 1], arr[i]
-                swapped = True
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
     return arr
 
 
-# print(bubble_sort([2, 3, 8, 5, 6, 85, 13]))
+print(bubble_sort([2, 3, 8, 5, 6, 85, 13]))
 
 # STRETCH: implement the Count Sort function below
 def count_sort( arr, maximum=-1 ):
