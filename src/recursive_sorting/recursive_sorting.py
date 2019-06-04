@@ -31,10 +31,17 @@ print(merge([4, 99, 13, 75, 2, 1, 178, 81], [3, 74, 11]))
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
-def merge_sort( arr ):
+def merge_sort(arr):
     # TO-DO
+    if len(arr) > 1:
+        left = merge_sort(arr[0:len(arr) // 2])
+        right = merge_sort(arr[len(arr) // 2:])
+        arr = merge(left, right)
 
     return arr
+
+
+print(merge_sort(merge([4, 99, 13, 75, 2, 1, 178, 81], [3, 74, 11])))
 
 
 # STRETCH: implement an in-place merge sort algorithm
@@ -42,6 +49,7 @@ def merge_in_place(arr, start, mid, end):
     # TO-DO
 
     return arr
+
 
 def merge_sort_in_place(arr, l, r): 
     # TO-DO
